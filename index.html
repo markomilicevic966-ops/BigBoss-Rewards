@@ -7,7 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BigBoss Rewards</title>
+<meta name="description" content="Discover Play To Earn games, Bitcoin reward apps, cloud mining platforms and money making apps.">
+<meta name="keywords" content="play to earn games, bitcoin games, money making apps, cloud mining, crypto rewards">
 
+  <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -365,15 +368,46 @@ Visit BigBoss Games
 
 <footer>
 
-
 <p>
 © 2026 BigBoss Rewards. All rights reserved.
 </p>
-
+<br>
+<p>
+👁 Visitors:
+<span id="viewCount">0</span>
+</p>
 
 </footer>
 
+<script>
 
+fetch("https://api.counterapi.dev/v1/bigbossrewards/views/up")
+
+.then(response => response.json())
+
+.then(data => {
+
+    if(data.count){
+
+        document.getElementById("viewCount").innerHTML = data.count;
+
+    }else{
+
+        document.getElementById("viewCount").innerHTML = "0";
+
+    }
+
+})
+
+.catch(error => {
+
+    document.getElementById("viewCount").innerHTML = "0";
+
+    console.log(error);
+
+});
+
+</script>
 
 </body>
 
